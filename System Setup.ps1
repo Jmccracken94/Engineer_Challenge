@@ -37,7 +37,7 @@ function setup-Admin{
     net user NewAdmin password123 /Add /expires:never
     net localgroup Administrators NewAdmin /Add
     net localgroup Users NewAdmin /delete
-    md C:\Users\NewAdmin
+    NewAdmin.put("HomeDirectory","c:\users\NewAdmin");
 <#reused code I had from previous script#>
 }
 
