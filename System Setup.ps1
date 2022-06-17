@@ -34,10 +34,10 @@ function setup-Time{
 
 function setup-Admin{
 
-    net user NewAdmin password123 /Add /expires:never
+    md C:\Users\NewAdmin
+    net user NewAdmin password123 /Add /expires:never /HOMEDIR:C:\Users\NewAdmin
     net localgroup Administrators NewAdmin /Add
     net localgroup Users NewAdmin /delete
-    NewAdmin.put("HomeDirectory","c:\users\NewAdmin");
 <#reused code I had from previous script#>
 }
 
