@@ -30,7 +30,7 @@ function setup-now{
 function setup-Time{
 
     Set-TimeZone -Id "UTC"
-
+<#https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7.2#>
 }
 
 function setup-Admin{
@@ -38,14 +38,14 @@ function setup-Admin{
     net user NewAdmin password123 /Add /expires:never
     net localgroup Administrators NewAdmin /Add
     net localgroup Users NewAdmin /delete
-
+<#reused code I had from previous script#>
 }
 
 function setup-RDP{
 
     Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
     Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-
+<#https://pureinfotech.com/enable-remote-desktop-powershell-windows-10/#>
 }
 
 function setup-AutoOff{
@@ -53,5 +53,5 @@ function setup-AutoOff{
     sc.exe config wuauserv start= disabled
     sc.exe stop wuauserv
     sc.exe start wuauserv
-
+<#https://nucuta.com/how-to-disable-automatic-updates-on-windows-10/#>
 }
