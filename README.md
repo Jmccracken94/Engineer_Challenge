@@ -14,20 +14,32 @@ I've ensured to include links to the site I found solutions for some of the requ
 Requirements:
 
 configuring it to have the following set (the exact mechanism used here to do this is up to you!):
+
 ○ timezone on the machine set to UTC (completed)
+
 ○ creating a new admin user and home/user directory (completed)
+
 ○ enabling RDP access if Windows, or SSH if Linux/Mac (completed)
+
 ○ enabling firewall ports RDP (completed)
+
 ○ disabling automatic updates (completed)
+
 ○ BONUS: enabling VNC access (not completed)
+
 ○ BONUS: the new VM also has all of its system software up to date (not completed)
+
 ● add automation to be able to assert that the above configuration changes are set properly in this newly-created VM
 archive/disk
+
 ○ this assertion automation will output some kind of status (process/shell exit code for example) to indicate whether
 it was a pass or fail (completed)
+
 ○ BONUS: points if this also calls something else (push notification, external service, e-mail, etc.) to notify you
 somehow of its status (not completed)
+
 ● keep all of this code in a git repo (completed)
+
 ● BONUS: Having this image built and configured inside a pipeline eg. Gitlab CI, GitHub Actions or Jenkins (not completed)
 
 **********************************************************************************************************************************************************************
