@@ -23,7 +23,6 @@ function setup-now{
     setup-Admin
     setup-RDP
     setup-AutoOff
-    setup-Up2Date
     setup-Errors
     }
 
@@ -55,4 +54,32 @@ function setup-AutoOff{
     sc.exe stop wuauserv
     sc.exe start wuauserv
 <#https://nucuta.com/how-to-disable-automatic-updates-on-windows-10/#>
+}
+
+function setup-Errors{
+    <#
+.SYNOPSIS
+Show errors to user.
+
+.DESCRIPTION
+This function opens the script error log in notepad.
+#>
+
+#get the number of errors that occured
+$numErrors = $error.count
+
+#show error count
+Write-Output -InputObject "There were $numErrors errors"
+
+$openNotepad = Read-Host "Would you like to view the errors? (y/n)"
+
+if ($openNotepad -like "*y*")
+    {
+    $error|Out-File "$PSScriptRoot\error.txt"
+    notepad "$PSScriptRoot\error.txt"|Out-Null
+    Remove-Item "$PSScriptRoot\error.txt"
+    }
+else
+    {
+    }
 }
