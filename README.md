@@ -52,4 +52,4 @@ Instructions for use:
 4. Press A and then Enter
 5. Run . '.\System Setup.ps1'
 6. Enter setup-now and press enter
-7. Press Y to view the Error log output
+7. Press Y  and then enter to view the Error log output
